@@ -1,0 +1,183 @@
+body {
+    font-family: 'EB Garamond', serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-size: 18px;
+    color: #d3bb89;
+    margin: 0;
+}
+
+@font-face {
+    font-family: Game_of_Thrones;
+    src: url(font/Game_of_Thrones.ttf);
+}
+
+h1 {
+    margin: 0;
+    font-family: Game_of_Thrones;
+    text-align: center;
+	font-weight: 100;
+}
+
+p {
+    margin: 0;
+    color: #d3bb89;
+}
+
+.contact_form {
+    background-image: url(img/darknoise.png);
+    display: flex;
+    height: 100vh;
+}
+
+/*PHOTO*/
+.screen_server {
+    max-width: 50%;
+    overflow: hidden;
+}
+
+.screen_server img {
+    width: 150%;
+    display: block;
+    margin: 0 0 0 -30%;
+}
+
+/*FORM*/
+
+.registration {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+#description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #fef8eb;
+    border-left: 1px solid #d3bb89; /* Параметры линии */ 
+    padding-left: 10px; /* Расстояние от линии до текста */ 
+    margin-bottom: 35px;
+
+}
+
+form {
+    width: 60%;
+    margin: 35px auto 0 auto;
+}
+
+form #caution {
+    font-size: 12px;
+    color: #fef8eb;
+	font-family: "Open Sans", sans-serif;
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background: #fff0 no-repeat 98% center;
+    width: 100%;
+    height: 30px;
+    border: none;
+    box-shadow: none;
+    border-bottom: solid 1px;
+    border-color: #d3bb89;
+    color: #fef8eb;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    outline:none;
+}
+
+#houses {
+    font-family: 'Open Sans', sans-serif;
+    background: #fff0 no-repeat 98% center;
+    width: 100%;
+    height: 30px;
+    border: none;
+    box-shadow: none;
+    border-bottom: solid 1px;
+    border-color: #d3bb89;
+    color: #fef8eb;
+    margin-bottom: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px;
+}
+
+option {
+    color: #fef8eb !important;
+    background-color: #d3bb89 !important;
+}
+
+#houses:focus {
+    outline:none;
+}
+
+textarea {
+    font-family: 'Open Sans', sans-serif;
+    background: #fff0 no-repeat 98% center;
+    width: 100%;
+    height: 30px;
+    border: none;
+    box-shadow: none;
+    border-bottom: solid 1px;
+    border-color: #d3bb89;
+    margin-bottom: 20px;
+	resize: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+textarea:focus {
+    outline:none;
+}
+
+.button {
+    color: #f8f2e5;
+    user-select: none;
+    background-color: #c19a49;
+    margin-top: 35px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: none;
+    padding: 13px 30px 30px 30px;
+}
+/*FOR SECOND FORM*/
+.confirmation {
+    display: inline-flex;
+}
+
+input[type="checkbox"]{ /*https://nisnom.com/veb-razrabotki/krasivyj-effekt-pulsatsii-dlya-chekboksov-i-radioknopok/#more-3010*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    height: 20px;
+    width: 20px;
+    background: #d3bb89;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.confirmation input:checked::before {
+    height: 20px;
+    width: 20px;
+    content: '✔';
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: #000;
+}
+
+.confirmation label {
+    margin-left: 10px;
+}
+
+
+
+
