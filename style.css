@@ -30,15 +30,12 @@ p {
 }
 
 /*PHOTO*/
-.screen_server {
+.screen_server {    
     max-width: 50%;
-    overflow: hidden;
-}
-
-.screen_server img {
-    width: 150%;
-    display: block;
-    margin: 0 0 0 -30%;
+    background-image: url(img/maxresdefault.jpg);
+    flex-grow: 1;
+    background-position: center;
+    background-size: cover;
 }
 
 /*FORM*/
