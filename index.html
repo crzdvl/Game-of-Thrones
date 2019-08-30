@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/style.css">
     </head>
     <body>
         <section class="contact_form">
@@ -12,41 +12,54 @@
             <div class="registration">
                 <h1>GAME OF THRONES</h1>
                 
-                <form>
-                        <p id="description">You've successfuly joined the game.</br>Tell us more about yourself.</p>
-                        <p>Who are you?</p>
-                        <p id="caution">Alpha-numeric username</p>
-                        <input type="text" name="firstname" placeholder="arya">
+                <form id="firstSection">
+                    <p id="description">You've successfuly joined the game.</br>Tell us more about yourself.</p>
+                    <p>Who are you?</p>
+                    <p id="caution">Alpha-numeric username</p>
+                    <input required type="text"
+                                    id="userName"
+                                    placeholder="arya" 
+                                    pattern="^[a-zA-Z0-9]+$">
+                    <p for="houses">Your Great House</p>
+                    <select required name="houses" id="houses">
+                        <option value="select" checked>Select House</option>
+                        <option value="house_1">House 1</option>
+                        <option value="house_2">House 2</option>
+                    </select>
 
-                        <p for="houses">Your Great House</p>
-                        <select name="houses" id="houses">
-                            <option value="select">Select House</option>
-                            <option value="House_1">House 1</option>
-                            <option value="House_2">House 2</option>
-                        </select>
+                    <p>Your preferences, hobbies, wishes etc.</p>
+                    <textarea name="comment" 
+                              id="comment" 
+                              cols="50" 
+                              rows="3" 
+                              placeholder="I have a long TOKKIL list...">
+                    </textarea>
 
-                        <p>Your preferences, hobbies, wishes etc.</p>
-                        <textarea name="comment" cols="50" rows="3" placeholder="I have a long TOKKIL list..."></textarea>
+                    <input type="submit" value="Save" class="button" id="submit_1"></p>
+                </form>
 
-                        <input type="submit" value="Save" class="button"></p>
-                    </form>
-
-                <!--<form>
+               <form id="secondSection">
                         <p>Enter your email</p>
-                        <input type="email" name="email" placeholder="arya@westeros.com">
+                        <input required type="email" 
+                                        id="userEmail" 
+                                        name="email" 
+                                        placeholder="arya@westeros.com" 
+                                        pattern="^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
 
                         <p>Choose secure password</p>
                         <p id="caution">Must be at least 8 characters</p>
-                        <input id="userPassword" type="password" minlength="4"
-                        maxlength="8" size="8" placeholder="password">
+                        <input required id="userPassword" 
+                                        type="password" 
+                                        placeholder="password">
 
                         <div class="confirmation">
                             <input type="checkbox" name="remember">
                             <label for="remeber">Remember me</label>
                         </div>
-                        <input type="submit" value="Sign Up" class="button"></p>
-                    </form>-->
+                        <input type="submit" value="Sign Up" class="button" id="submit_2"></p>
+                    </form>
             </div>
         </section>
+        <script src="assets/js.js"></script>
     </body>
 </html>

@@ -80,10 +80,11 @@ input {
     border-color: #d3bb89;
     color: #fef8eb;
     margin-bottom: 20px;
+    outline:none;
 }
 
 input:focus {
-    outline:none;
+    outline: -webkit-focus-ring-color auto 1px;
 }
 
 #houses {
@@ -175,6 +176,9 @@ input[type="checkbox"]{ /*https://nisnom.com/veb-razrabotki/krasivyj-effekt-puls
     margin-left: 10px;
 }
 
+#secondSection {
+    display: none;
+}
 
 
 
