@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/style.css">
+        <title>GAME OF THRONES</title>
     </head>
     <body>
         <section class="contact_form">
@@ -12,19 +13,24 @@
             <div class="registration">
                 <h1>GAME OF THRONES</h1>
                 
-                <form id="firstSection">
+                <form id="secondSection">
                     <p id="description">You've successfuly joined the game.</br>Tell us more about yourself.</p>
-                    <p>Who are you?</p>
-                    <p id="caution">Alpha-numeric username</p>
+                    <label>Who are you?</label>
+                    <p class="caution">Alpha-numeric username</p>
                     <input required type="text"
                                     id="userName"
-                                    placeholder="arya" 
-                                    pattern="^[a-zA-Z0-9]+$">
-                    <p for="houses">Your Great House</p>
+                                    placeholder="arya">
+                    <label for="houses">Your Great House</label>
                     <select required name="houses" id="houses">
                         <option value="select" checked>Select House</option>
-                        <option value="house_1">House 1</option>
-                        <option value="house_2">House 2</option>
+                        <option value="house_1">Targaryen of King's Landing</option>
+                        <option value="house_2">Stark of Winterfell</option>
+                        <option value="house_3">Lannister of Casterly Rock</option>
+                        <option value="house_4">Tully of Riverrun</option>
+                        <option value="house_5">Greyjoy of Pyke</option>
+                        <option value="house_6">Baratheon of Storm's End</option>
+                        <option value="house_7">Tyrell of Highgarden</option>
+                        <option value="house_8">Martell of Sunspear</option>
                     </select>
 
                     <p>Your preferences, hobbies, wishes etc.</p>
@@ -38,28 +44,27 @@
                     <input type="button" value="Save" class="button" id="submit_1"></p>
                 </form>
 
-               <form id="secondSection">
-                    <p>Enter your email</p>
+               <form id="firstSection">
+                    <label>Enter your email</label>
                     <input required type="email" 
                                     id="userEmail" 
                                     name="email" 
-                                    placeholder="arya@westeros.com" 
-                                    pattern="^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
+                                    placeholder="arya@westeros.com">
 
-                    <p>Choose secure password</p>
-                    <p id="caution">Must be at least 8 characters</p>
+                    <label>Choose secure password</label>
+                    <p class="caution">Must be at least 8 characters</p>
                     <input required id="userPassword" 
                                     type="password" 
                                     placeholder="password">
 
                     <div class="confirmation">
-                        <input type="checkbox" name="remember">
+                        <input type="checkbox" id="remember">
                         <label for="remeber">Remember me</label>
                     </div>
                     <input type="button" value="Sign Up" class="button" id="submit_2"></p>
                 </form>
             </div>
         </section>
-        <script src="assets/js.js"></script>
+        <script src="assets/main.js"></script>
     </body>
 </html>
