@@ -1,7 +1,7 @@
 //First form
 document.getElementById("userName").addEventListener("keydown", validateName);
 document.getElementById("houses").addEventListener("onclick", validateHouses);
-document.getElementById("userEmail").addEventListener("keydown", validateEmail);
+document.getElementById("userEmail").addEventListener("focusout", validateEmail);
 document.getElementById("userPassword").addEventListener("keydown", validatePassword);
 
 function validateName() {
@@ -69,10 +69,10 @@ $(window).on('load', function() {
 
 
 /*Slider*/
-var slideNow = 1;
-var slideCount = $('#slidewrapper').children().length;
-var navBtnId = 0;
-var translateWidth = 0;
+let slideNow = 1;
+    slideCount = $('#slidewrapper').children().length,
+    navBtnId = 0,
+    translateWidth = 0;
 
 $(document).ready(function() {
     $('#next-btn').click(function() {
@@ -87,20 +87,17 @@ $(document).ready(function() {
 
 function changeCurrentSlide() {
   notChoice = document.getElementById("houses").value;
-  switch (notChoice) {
-    case "Targaryen of King's Landing":
-      slideNow = 1;
-      break;
-    case "Tully of Riverrun":
-      slideNow = 2;
-      break;
-    case "Tyrell of Highgarden":
-      slideNow = 3;
-      break;
-    case "Stark of Winterfell":
-      slideNow = 0;
-      break;
-  }
+  let slideNow = getSlideNow(notChoice);
+};
+
+function getSlideNow(notChoice) {
+  let slides = {
+    0 : 'Stark of Winterfell',
+    1 : "Targaryen of King's Landing",
+    2 : 'Tully of Riverrun',
+    3 : 'Tyrell of Highgarden'
+  };
+  return slides;
 };
 
 function nextSlide() {
