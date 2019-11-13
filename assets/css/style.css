@@ -154,7 +154,7 @@ input[type="checkbox"]{ /*https://nisnom.com/veb-razrabotki/krasivyj-effekt-puls
     margin-left: 10px;
 }
 
-#secondSection {
+.section-none {
     display: none;
 }
 
@@ -272,4 +272,10 @@ span .current {
 .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
     border-color: #202020;
 
+}
+
+/**/
+
+.false {
+    border-color: #ff0000;
 }
