@@ -1,15 +1,22 @@
+const userName = document.getElementById("userName"),
+      houses = document.getElementById("houses"),
+      userEmail = document.getElementById("userEmail"),
+      userPassword = document.getElementById("userPassword"),
+      firstSection = document.getElementById("firstSection"),
+      secondSection = document.getElementById("secondSection");
+
 //First form
-document.getElementById("userName").addEventListener("keydown", validateName);
-document.getElementById("houses").addEventListener("onclick", validateHouses);
-document.getElementById("userEmail").addEventListener("focusout", validateEmail);
-document.getElementById("userPassword").addEventListener("keydown", validatePassword);
+userName.addEventListener("focusout", validateName);
+houses.addEventListener("onclick", validateHouses);
+userEmail.addEventListener("focusout", validateEmail);
+userPassword.addEventListener("keydown", validatePassword);
 
 function validateName() {
-  if (!document.getElementById("userName").value.match(/^[a-zA-Z0-9]+$/g)) {
-    document.getElementById("userName").style.cssText=`border-color: #ff0000;`;
+  if (!userName.value.match(/^[a-zA-Z0-9]+$/g)) {
+    userName.classList.add('false');
     return false;
-  } else if (document.getElementById("userName").value.match(/^[a-zA-Z0-9]+$/g)){
-    document.getElementById("userName").style.cssText=`border-color: #d3bb89;`;
+  } else if (userName.value.match(/^[a-zA-Z0-9]+$/g)){
+    userName.classList.remove('false');
     return true;
   }
 }
@@ -26,22 +33,22 @@ function validateHouses() {
 
 //Second form
 function validateEmail() {
-  if (!document.getElementById("userEmail").value.match(/^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g)) {
-    document.getElementById("userEmail").style.cssText=`border-color: #ff0000;`;
-    return false;
-  } else if (document.getElementById("userEmail").value.match(/^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g)){
-    document.getElementById("userEmail").style.cssText=`border-color: #d3bb89;`;
-    return true;
+  if (!userEmail.value.match(/^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g)) {
+      userEmail.classList.add('false');
+      return false;
+  } else if (userEmail.value.match(/^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/g)){
+      userEmail.classList.remove('false');
+      return true;
   }
 }
 
 function validatePassword() {
-  if (!document.getElementById("userPassword").value.match(/^.{8,}$/g)) {
-    document.getElementById("userPassword").style.cssText=`border-color: #ff0000;`;
-    return false;
-  } else if (document.getElementById("userPassword").value.match(/^.{8,}$/g)){
-    document.getElementById("userPassword").style.cssText=`border-color: #d3bb89;`;
-    return true;
+  if (!userPassword.value.match(/^.{8,}$/g)) {
+      userPassword.classList.add('false');
+      return false;
+  } else if (userPassword.value.match(/^.{8,}$/g)){
+      userPassword.classList.remove('false');
+      return true;
   }
 }
 
@@ -49,8 +56,8 @@ submit_2.onclick = function() {
   validateEmail();
   validatePassword();
   if(validatePassword() && validateEmail()){
-    document.getElementById("firstSection").style.cssText=`display: none;`;
-    document.getElementById("secondSection").style.cssText=`display: block;`;
+    firstSection.classList.add('section-none');
+    secondSection.classList.remove('section-none');
   }
 };
 
