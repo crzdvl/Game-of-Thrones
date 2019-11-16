@@ -13,7 +13,7 @@ body {
 
 h1 {
     margin: 0;
-    font-family: Game_of_Thrones;
+    font-family: Game_of_Thrones, sans-serif;
     text-align: center;
 	font-weight: 100;
 }
@@ -278,4 +278,25 @@ span .current {
 
 .false {
     border-color: #ff0000;
+}
+
+
+.sy-pager {
+    display: none;
+}
+
+.sy-controls li.sy-next, li.sy-prev {
+    display: none;
+}
+
+.sy-controls li a:link, .sy-controls li a:visited {
+    display: none;
+}
+
+.sy-controls li a {
+    display: none;
+}
+
+.sy-caption {
+    display: none!important;
 }

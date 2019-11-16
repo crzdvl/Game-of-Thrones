@@ -2,8 +2,8 @@ const userName = document.getElementById("userName"),
       houses = document.getElementById("houses"),
       userEmail = document.getElementById("userEmail"),
       userPassword = document.getElementById("userPassword"),
-      firstSection = document.getElementById("firstSection"),
-      secondSection = document.getElementById("secondSection");
+      firstSection = document.getElementById("first-section-submit"),
+      secondSection = document.getElementById("second-section-submit");
 
 //First form
 userName.addEventListener("focusout", validateName);
@@ -66,83 +66,58 @@ submit_1.onclick = function() {
   validateHouses();
 };
 
+$(document).ready(function() {
+  $('select').niceSelect();
+});
+
+let slider = jQuery('#sliders').slippry({
+  adaptiveHeight: false,
+  start: 1, 
+  loop: false,
+  controls: false,
+  transition: 'fade', 
+  easing: 'linear', 
+  continuous: false,
+  auto: false
+});
+
+function getSlideNow (type) {
+  let slides = {
+    'Stark of Winterfell' : 1,
+    "Targaryen of King's Landing" : 2 ,
+    'Tully of Riverrun' : 3,
+    'Tyrell of Highgarden' : 4,
+    'Select House': 1
+  };
+  return slides[type];
+}
 
 $(window).on('load', function() {
   $('#houses').on('change', function() {
-    changeCurrentSlide();
-    nextSlide();
+    
+    notChoice = document.getElementById("houses").value;
+    let slideNow = getSlideNow(notChoice);
+    /*switch(notChoice) {
+      case "Stark of Winterfell":
+        slideNow = 1;
+      break;
+
+      case "Targaryen of King's Landing":
+        slideNow = 2;
+      break;
+
+      case 'Tully of Riverrun':
+        slideNow = 3;
+      break;
+
+      case 'Tyrell of Highgarden': 
+      slideNow = 4;
+      break;
+
+      default:
+      slideNow = 1;
+    }*/
+    slider.goToSlide(slideNow);
+    console.log(slideNow);
   });
-});
-
-
-/*Slider*/
-let slideNow = 1;
-    slideCount = $('#slidewrapper').children().length,
-    navBtnId = 0,
-    translateWidth = 0;
-
-$(document).ready(function() {
-    $('#next-btn').click(function() {
-        nextSlide();
-    });
-
-    $('#prev-btn').click(function() {
-        prevSlide();
-    });
-});
-
-
-function changeCurrentSlide() {
-  notChoice = document.getElementById("houses").value;
-  let slideNow = getSlideNow(notChoice);
-};
-
-function getSlideNow(notChoice) {
-  let slides = {
-    0 : 'Stark of Winterfell',
-    1 : "Targaryen of King's Landing",
-    2 : 'Tully of Riverrun',
-    3 : 'Tyrell of Highgarden'
-  };
-  return slides;
-};
-
-function nextSlide() {
-    if (slideNow == slideCount || slideNow <= 0 || slideNow > slideCount || slideNow === 0) {
-        $('#slidewrapper').css('transform', 'translate(0, 0)');
-          slideNow = 1;
-    } else {
-        translateWidth = -$('#viewport').width() * (slideNow);
-        $('#slidewrapper').css({
-            'transform': 'translate(' + translateWidth + 'px, 0)',
-            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
-            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
-        });
-        slideNow++;
-    }
-}
-
-function prevSlide() {
-    if (slideNow == 1 || slideNow <= 0 || slideNow > slideCount) {
-        translateWidth = -$('#viewport').width() * (slideCount - 1);
-        $('#slidewrapper').css({
-            'transform': 'translate(' + translateWidth + 'px, 0)',
-            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
-            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
-        });
-        slideNow = slideCount;
-    } else {
-        translateWidth = -$('#viewport').width() * (slideNow - 2);
-        $('#slidewrapper').css({
-            'transform': 'translate(' + translateWidth + 'px, 0)',
-            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
-            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
-        });
-        slideNow--;
-    }
-}
-
-/**/ 
-$(document).ready(function() {
-  $('select').niceSelect();
 });
