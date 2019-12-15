@@ -34,6 +34,10 @@ p {
     height: 100vh;
 }
 
+.warning {
+    color:red;
+}
+
 /*PHOTO*/
 .screen_server {    
     max-width: 50%;
@@ -44,7 +48,7 @@ p {
 
 /*FORM*/
 
-.registration {
+.registration, .success-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,19 +156,6 @@ input[type="checkbox"]{ /*https://nisnom.com/veb-razrabotki/krasivyj-effekt-puls
 
 .confirmation label {
     margin-left: 10px;
-}
-
-.section-none {
-    display: none;
-}
-
-
-/*/*//*/*//**/
-
-#block-for-slider {
-    /*width: 80%;
-    margin: 0 auto;
-    margin-top: 100px;*/
 }
 
 #viewport {
@@ -300,3 +291,61 @@ span .current {
 .sy-caption {
     display: none!important;
 }
+
+/*success form*/
+
+.success-form {
+    text-align: center;
+}
+
+.success-form a, .success-form a:active{
+    color: #d3bb89;
+}
+
+.checkmark {
+    margin: 20px auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #000;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #d3bb89;
+    animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+.checkmark__circle {      
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #d3bb89;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+    }
+    @keyframes fill {
+        100% {
+            box-shadow: inset 0px 0px 0px 30px #d3bb89;
+        }
+}
+  
+  
