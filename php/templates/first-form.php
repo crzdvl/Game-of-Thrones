@@ -1,38 +1,3 @@
-<?php
-
-    session_start();
-
-    $email = $_SESSION['email'];
-
-    if(empty($_SESSION['email']) || empty($_SESSION['pass'])
-        || empty($_SESSION['name']) || empty($_SESSION['house'])
-        || empty($_SESSION['comment']) || checkFor($email)){
-        $_SESSION = array();
-    } else {
-        uploadTheUserData();
-    }
-
-    function uploadTheUserData() {
-        $path_to_file = './database/'.$_SESSION['email'].'.json';
-        $userData = array(
-            "name" => $_SESSION['name'],
-            "house" => $_SESSION['house'],
-            "comment" => $_SESSION['comment'],
-            "password" => $_SESSION['pass']
-        );
-        file_put_contents($path_to_file,json_encode($userData));
-    }
-
-    function checkFor($email) {
-        $path_to_file = './database/'.$email.'.json';
-        if(file_exists($path_to_file)) {
-            return true;
-        } else {
-            return false;
-        }    
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -61,16 +26,30 @@
                     </li>
                 </ul>
              </div>
-            <div class="success-form">
+            <div class="registration">
                 <h1>GAME OF THRONES</h1>
-                <p>Form is filled successfully</p>
-                <svg class="checkmark"
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 52 52">
-                        <circle class="checkmark__circle"cx="26" cy="26" r="25" fill="none"/>
-                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                </svg>
-                <a href="index.php">Main page</a>                    
+                <form id="first-section-submit" action="<?php $_SERVER['REQUEST_URI'] ?>" method="POST">
+                    <label for="userEmail">Enter your email</label>
+                    <span class ="warning" style="color: red; font-size: 15px; display: flex;"><?php echo $emailErr; ?></span>
+                    <input  type="text" 
+                            id="userEmail" 
+                            name="email" 
+                            placeholder="arya@westeros.com">
+
+                    <label for="userPassword">Choose secure password</label>
+                    <p class="caution">Must be at least 8 characters</p>
+                    <span class ="warning" style="color: red; font-size: 15px"><?php echo $passErr; ?></span>
+                    <input id="userPassword" 
+                            type="password" 
+                            name="password"
+                            placeholder="password">
+
+                    <div class="confirmation">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <input type="submit" name ="submit" value="Sign Up" class="button" id="submit_2"></p>
+                </form>
             </div>
         </section>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
